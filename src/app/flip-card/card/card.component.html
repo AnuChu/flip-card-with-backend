@@ -1,0 +1,22 @@
+<div class="item" [ngClass]="{'flip' : isCardOpened(), 'disable' : timeout}" [id]="item.id">
+
+  <div class="item_front">
+    <div class="close" (click)="this.handleDeleteCard()"></div>
+    <div class="item-content" (click)="toggleCard()">
+      <div class="name">{{item.title}}</div>
+    </div>
+  </div>
+
+  <div class="item_back">
+    <div class="close" (click)="this.handleDeleteCard()"></div>
+    <div class="item-content" (click)="toggleCard()">
+      <div class="name">{{item.title}}</div>
+      <div class="description">
+        {{item.description}}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

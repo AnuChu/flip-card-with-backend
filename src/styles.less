@@ -1,0 +1,205 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.form {
+  max-width: 340px;
+  margin: 40px auto;
+}
+
+.form-title {
+  margin-bottom: 15px;
+  font-size: 18px;
+  line-height: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.row + .row {
+  margin-top: 15px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid #cbcfd3;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+input {
+  height: 35px;
+}
+
+textarea {
+  height: 80px;
+  min-height: 80px;
+  resize: vertical;
+  vertical-align: top;
+}
+
+.button {
+  border: none;
+  border-radius: 4px;
+  background-color: #ffdd2d;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: .8;
+}
+
+button.button {
+  width: 340px;
+  height: 35px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+input[type="submit" i]:disabled{
+  cursor: default;
+}
+
+input[type="submit" i]:disabled:hover{
+  opacity: inherit;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 25px;
+  padding: 25px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+  gap: 20px;
+}
+
+.item {
+  width: 360px;
+  height: 200px;
+  box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
+}
+
+.item-content {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+  border: 1px solid #cbcfd3;
+  border-radius: 4px;
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.close:hover {
+  background-color: #ededed;
+}
+
+.close:before,
+.close:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  bottom: 5px;
+  left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background-color: #999;
+  transform: rotate(45deg);
+}
+
+.close:after {
+  transform: rotate(-45deg);
+}
+
+.name {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #74a3c7;
+  text-align: center;
+  margin: 20px 20px 0 20px;
+}
+
+.description {
+  margin: 10px 20px 20px 20px;
+  padding-right: 10px;
+  max-height: 128px;
+  overflow: auto;
+}
+
+.item_front .item-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item_back .name {
+  font-size: 13px;
+  text-align: left;
+}
+
+.item_front {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+  backface-visibility: hidden;
+  transition: transform .3s;
+}
+
+.item_back {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(-180deg);
+  transition: transform .3s;
+}
+
+.item.flip .item_front {
+  transform: rotateY(180deg);
+  z-index: -1;
+}
+
+.item.flip .item_back {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.disable {
+  pointer-events: none
+}
+

@@ -1,0 +1,5 @@
+<app-form-add (addCard)="addCard($event)"></app-form-add>
+<div class="button-wrapper">
+  <button (click)="openAllCards()" class="button">Перевернуть все карты</button>
+</div>
+<app-list-cards [data]="data" (deleteCardEvent)="deleteCard($event)"></app-list-cards>
